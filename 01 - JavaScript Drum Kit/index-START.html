@@ -76,6 +76,24 @@
       audio.currentTime = 0 //rewind to start
       audio.play()
       key.classList.add('playing')
+
+      const removeTransition = e => {
+        if (e.propertyName !== 'transform') {
+
+          return;
+
+          console.log(e.propertyName)
+        }
+      }
+
+      // console.log(e) //5 transition showed
+
+
+
+      const keys = document.querySelectorAll('.key')
+      keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+
+
     })
   </script>
 
